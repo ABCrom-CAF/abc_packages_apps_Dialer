@@ -758,6 +758,7 @@ public class DialtactsActivity extends TransactionSafeActivity
       handleMenuSettings();
       Logger.get(this).logScreenView(ScreenEvent.Type.SETTINGS, this);
       return true;
+
     } else if (resId == R.id.menu_4g_conference_call) {
       try {
        QtiCallUtils.openConferenceUriDialerOr4gConferenceDialer(this);
@@ -1615,8 +1616,7 @@ public class DialtactsActivity extends TransactionSafeActivity
       }
 
       final MenuItem conferDialerOption = menu.findItem(R.id.menu_4g_conference_call);
-      conferDialerOption.setVisible(
-          QtiCallUtils.show4gConferenceDialerMenuOption(getApplicationContext()));
+      conferDialerOption.setVisible(false);
 
       Main dialtacts = MainComponent.get(context).getMain();
       menu.findItem(R.id.menu_new_ui_launcher_shortcut)
